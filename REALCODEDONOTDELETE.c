@@ -24,52 +24,19 @@ void joystick() {
 	}
 
 
+} n
+
+task main(){
+joystick();
 }
 
-//autonomous
 /*steps to do
 1. clamp claw on preload cone DONE
-2. turn 45 degrees DONE
-3. move forward 4 or 5 feet
+2. turn 45 degrees to the right DONE
+3. move forward 4 feet
 4. drop the cone on the mobile goal
 5. pick up mobile goal
-6. turn 180 degrees
-7. move forward 4 or 5 feet
+6. turn 180 degrees counterclockwise
+7. move forward 4 feet
 8. deposit mobile goal in 5 point zone
-
 */
-void forward(int time) {
-	motor[CHFrontLeft] = 50;
-	motor[CHBackLeft] = 50;
-	motor[CHFrontRight] = 50;
-	motor[CHBackRight] = 50;
-	sleep(time);
-
-}
-
-
-void driveForward(int time){
-	setMotorTarget(CHFrontRight, 720, 50);
-	setMotorTarget(CHFrontLeft, 720, 50);
-	setMotorTarget(CHBackLeft, 720, 50);
-	setMotorTarget(CHBackRight, 720, 50);
-	sleep(5000);
-}
-
-void driveBackward(int time){
-	setMotorTarget(CHFrontRight, -720, 50);
-	setMotorTarget(CHFrontLeft, -720, 50);
-	setMotorTarget(CHBackLeft, -720, 50);
-	setMotorTarget(CHBackRight, -720, 50);
-	sleep(5000);
-}
-
-void autonomous(){
-	/*
-	motor[Claw] = 30;
-	setMotorTarget(,rotations,30);
-	forward(4,rotations,30);
-	motor[Claw] = -30;
-	driveForward();
-*/
-}
