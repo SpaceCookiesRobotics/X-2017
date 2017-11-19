@@ -100,17 +100,27 @@ void autonomous() {
 	turnRight(1000);
 	forward(4000);
 }
-//Make another auton that works with right side of field
+//Right side autonomous (same as above but sides reversed)
+/*void autonomous() {
+clawMovement(true);
+turnLeft(1000);
+forward(4000);
+towerMovement(500, true);
+clawMovement(false);
+towerMovement(500, false);
+turnLeft(1000);
+forward(4000);
+}*/
 
 //robot controls
 void joystick() {
 	while (true) {
-		motor[CHFrontRight] = vexRT[Ch2]*2; //front right chassis moves forward using channel 2
-		motor[CHFrontLeft] = vexRT[Ch3]*2; //front left chassis moves forward using channel 3
-		motor[CHBackRight] = vexRT[Ch2]*2; //back right chassis
-		motor[CHBackLeft] = vexRT[Ch3]*2; //back left chassis
-		motor[SURight] = vexRT[Ch3Xmtr2]/2; //Right superstructure
-		motor[SULeft] = vexRT[Ch3Xmtr2]/2; //Left superstructure
+		motor[CHFrontRight] = vexRT[Ch2]*2;
+		motor[CHFrontLeft] = vexRT[Ch3]*2;
+		motor[CHBackRight] = vexRT[Ch2]*2;
+		motor[CHBackLeft] = vexRT[Ch3]*2;
+		motor[SURight] = vexRT[Ch3Xmtr2]/2;
+		motor[SULeft] = vexRT[Ch3Xmtr2]/2;
 		if (vexRT[Btn5UXmtr2] == 1){
 			startTask (ArmUP);
 		}
@@ -123,6 +133,5 @@ void joystick() {
 		if (vexRT[Btn6DXmtr2] == 1){
 			startTask (CloseClaw);
 		}
-
 	}
 }
