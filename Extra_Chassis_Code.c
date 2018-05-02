@@ -43,15 +43,15 @@ void turnRight (int time){
 
 void autonomous() {
 	if (autonomousMode == 0) {
-		turnRight(100);
-		forward(500);
-		turnLeft(200);
-		forward(500);
-	} else if (autonomousMode == 1){
-		turnLeft(100);
-		forward(500);
 		turnRight(200);
-		forward(500);
+		forward(600);
+		turnLeft(355);
+		forward(1000);
+	} else if (autonomousMode == 1){
+		turnLeft(200);
+		forward(600);
+		turnRight(355);
+		forward(1000);
 		}
 }
 
